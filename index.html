@@ -133,7 +133,6 @@
       <div class="tk-vline" style="width:1px; height:40px; background:var(--border);"></div>
       <div><div class="mono" style="font-size:11px; color:var(--mut); letter-spacing:0.06em; margin-bottom:6px;">OCR ACCURACY</div><div class="serif" style="font-size:clamp(30px,4vw,42px); line-height:1;">94%</div></div>
       <div style="margin-left:auto; display:flex; gap:12px;">
-        <button id="tk-cta-ai" style="display:inline-flex; align-items:center; gap:9px; height:46px; padding:0 22px; background:var(--accent); color:var(--accent-ink); border:none; border-radius:999px; font-family:inherit; font-weight:600; font-size:15px; cursor:pointer; box-shadow:0 10px 30px rgba(var(--accent-rgb),0.28);">Ask my AI</button>
         <button id="tk-cta-demo" style="display:inline-flex; align-items:center; gap:9px; height:46px; padding:0 20px; background:var(--surface); backdrop-filter:var(--glass); border:1px solid var(--border); border-radius:999px; font-family:inherit; font-weight:500; font-size:15px; color:var(--ink); cursor:pointer;">▶ DiffContext demo</button>
       </div>
     </div>
@@ -360,7 +359,7 @@
         <div data-reveal>
           <h3 class="serif" style="font-size:clamp(36px,5vw,52px); line-height:1.02; letter-spacing:-0.01em; margin-bottom:24px;">Let's build something <span class="it" style="color:var(--accent);">efficient.</span></h3>
           <div class="mono" style="display:flex; flex-direction:column; gap:14px; font-size:14px;">
-            <a href="/cdn-cgi/l/email-protection#a1d5d3c0cad2c9c0cfccc8d2c9d3c0959696e1c6ccc0c8cd8fc2cecc" style="color:var(--ink2);">→ <span class="__cf_email__" data-cfemail="7a0e081b1109121b1417130912081b4e4d4d3a1d171b131654191517">[email&#160;protected]</span></a>
+            <a href="mailto:trakshanmishra477@gmail.com" style="color:var(--ink2);">→ trakshanmishra477@gmail.com</a>
             <a href="https://www.linkedin.com/in/trakshan-mishra-100b08206/" target="_blank" rel="noopener" style="color:var(--ink2);">→ LinkedIn</a>
             <a href="https://github.com/trakshan-mishra" target="_blank" rel="noopener" style="color:var(--ink2);">→ GitHub</a>
           </div>
@@ -431,29 +430,7 @@
     </div>
   </div>
 
-  <!-- CHAT DOCK -->
-  <button id="tk-chat-pill" style="position:fixed; bottom:26px; right:26px; z-index:70; display:flex; align-items:center; gap:10px; height:52px; padding:0 22px; background:var(--pill); color:var(--pill-ink); border:none; border-radius:999px; font-family:inherit; font-weight:600; font-size:14px; cursor:pointer; box-shadow:0 12px 34px var(--shadow);">
-    <span style="width:8px; height:8px; border-radius:50%; background:var(--accent);"></span> Ask Trakshan's AI
-  </button>
-  <div id="tk-chat-panel" style="position:fixed; bottom:26px; right:26px; z-index:71; width:392px; max-width:calc(100vw - 32px); height:530px; max-height:calc(100vh - 52px); background:var(--surface-solid); border:1px solid var(--border); border-radius:20px; box-shadow:0 30px 70px var(--shadow); display:none; flex-direction:column; overflow:hidden;">
-    <div style="display:flex; align-items:center; justify-content:space-between; padding:18px; border-bottom:1px solid var(--border);">
-      <div style="display:flex; align-items:center; gap:11px;">
-        <span style="width:10px; height:10px; border-radius:50%; background:var(--accent);"></span>
-        <div><div style="font-weight:600; font-size:14px;">Trakshan's AI</div><div class="mono" style="font-size:10px; color:var(--mut);">trained on the résumé · demo</div></div>
-      </div>
-      <button id="tk-chat-close" style="width:30px; height:30px; background:var(--bg); border:1px solid var(--border); border-radius:8px; color:var(--ink2); cursor:pointer; font-size:16px;">×</button>
-    </div>
-    <div id="tk-chat-body" style="flex:1; overflow-y:auto; padding:18px; display:flex; flex-direction:column; gap:12px;">
-      <div style="align-self:flex-start; max-width:86%; background:var(--bg); border-radius:14px 14px 14px 4px; padding:12px 14px; font-size:13.5px; line-height:1.5; color:var(--ink2);">Hey — ask me anything about Trakshan's work. Try one:</div>
-      <div id="tk-chat-chips" style="display:flex; flex-wrap:wrap; gap:8px;">
-        <button class="tk-qchip">What's his strongest project?</button><button class="tk-qchip">Does he know RAG?</button><button class="tk-qchip">Is he production-ready?</button>
-      </div>
-    </div>
-    <div style="padding:15px; border-top:1px solid var(--border); display:flex; gap:8px;">
-      <input id="tk-chat-input" type="text" placeholder="Ask a question…" class="tk-input" style="flex:1; height:42px;">
-      <button id="tk-chat-send" style="width:46px; height:42px; background:var(--accent); color:var(--accent-ink); border:none; border-radius:11px; cursor:pointer; font-size:16px;">↑</button>
-    </div>
-  </div>
+  <!-- CHAT DOCK (Removed) -->
 
   <!-- COMMAND PALETTE -->
   <div id="tk-palette-overlay" style="position:fixed; inset:0; z-index:100; display:none; align-items:flex-start; justify-content:center; padding-top:14vh; background:rgba(20,15,9,0.35); backdrop-filter:blur(5px);">
@@ -649,7 +626,7 @@ class Component extends DCLogic {
   }
 
   initMagnetic() {
-    ['tk-cta-ai', 'tk-cta-demo'].forEach(id => {
+    ['tk-cta-demo'].forEach(id => {
       const btn = document.getElementById(id); if (!btn) return;
       if (!this.reduced) {
         btn.style.transition = (btn.style.transition ? btn.style.transition + ', ' : '') + 'transform .25s cubic-bezier(.2,.8,.2,1)';
@@ -657,7 +634,7 @@ class Component extends DCLogic {
         this.on(btn, 'mouseleave', () => { btn.style.transform = 'translate(0,0)'; });
       }
     });
-    this.on(document.getElementById('tk-cta-ai'), 'click', () => this.openChat());
+    // removed tk-cta-ai click handler
     this.on(document.getElementById('tk-cta-demo'), 'click', () => this.openDemo());
   }
 
@@ -845,7 +822,7 @@ class Component extends DCLogic {
       { label: 'Toolkit', kind: 'nav', target: 'skills', key: '03' },
       { label: 'About', kind: 'nav', target: 'about', key: '04' },
       { label: 'Contact', kind: 'nav', target: 'contact', key: '05' },
-      { label: 'Ask Trakshan\u2019s AI', kind: 'cmd', run: () => this.openChat(), key: 'chat' },
+      // removed chat command
       { label: 'Toggle dark mode', kind: 'cmd', run: () => this.applyTheme(this.theme === 'dark' ? 'light' : 'dark'), key: '◐' },
       { label: 'Open GitHub', kind: 'cmd', run: () => window.open('https://github.com/trakshan-mishra', '_blank'), key: '↗' },
       { label: 'Email Trakshan', kind: 'cmd', run: () => { location.href = 'mailto:trakshanmishra477@gmail.com'; }, key: '↗' },
@@ -855,7 +832,7 @@ class Component extends DCLogic {
     const render = () => { list.innerHTML = ''; filtered.forEach((it, i) => { const row = document.createElement('div'); row.className = 'tk-prow' + (i === active ? ' active' : ''); row.innerHTML = `<span class="mono" style="font-size:12px;color:${it.kind === 'nav' ? 'var(--accent)' : 'var(--mut2)'}">${it.kind === 'nav' ? '#' : '›'}</span><span>${it.label}</span><span class="tk-pk">${it.key}</span>`; row.addEventListener('mouseenter', () => { active = i; render(); }); row.addEventListener('click', () => this.exec(filtered[i])); list.appendChild(row); }); };
     this.exec = it => { if (!it) return; this.closePal(); if (it.kind === 'nav') this.scrollTo(it.target); else it.run && it.run(); };
     this.closePal = () => { overlay.style.display = 'none'; input.value = ''; };
-    this.openPal = () => { overlay.style.display = 'flex'; filtered = items.slice(); active = 0; render(); setTimeout(() => input.focus(), 20); };
+    this.openPal = () => { overlay.style.display = 'flex'; filtered = items.slice(); active = 0; render(); input.focus(); };
     this.scrollTo = id => { const el = document.getElementById(id); if (el) window.scrollTo({ top: el.getBoundingClientRect().top + pageYOffset - 80, behavior: this.reduced ? 'auto' : 'smooth' }); };
     this.on(document.getElementById('tk-open-palette'), 'click', () => this.openPal());
     this.on(input, 'input', () => { const q = input.value.toLowerCase().trim(); filtered = items.filter(it => it.label.toLowerCase().includes(q) || it.key.includes(q)); active = 0; render(); });
